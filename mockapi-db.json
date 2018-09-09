@@ -1,0 +1,28 @@
+{
+  "clients": [
+    {
+      "cuid": "5cbd8d728abac4f5",
+      "key": "c575e65a5c32d7a4d9abd75955029a9e",
+      "shell_hint": "/bin/sh",
+      "first_seen": "2018-08-13T19:09:19.672315",
+      "last_seen": "2018-08-13T21:08:29.775819",
+      "addresses": [
+        {
+          "address": "::1",
+          "first_seen": "2018-08-13T19:09:19.672954",
+          "last_seen": "2018-08-15T10:45:15.502049"
+        }
+      ],
+      "tasks": []
+    },
+    {
+      "cuid": "246dacb1c462eac5",
+      "key": "4b6af3572b40b5de122b68fdd03426d4",
+      "shell_hint": "/bin/sh",
+      "first_seen": "2018-08-13T22:34:09.609133",
+      "last_seen": "2018-08-15T10:45:15.496095",
+      "addresses": [],
+      "tasks": []
+    }
+  ]
+}

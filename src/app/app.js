@@ -14,8 +14,10 @@ import muninn from './muninn/module'
 const MODULE_NAME = 'godin';
 
 function config($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/muninn');
 
+/*
+Commenting this out because we're only focused on Muninn
   $stateProvider
     .state({
       name: 'home',
@@ -38,6 +40,7 @@ function config($stateProvider, $urlRouterProvider) {
         icon: 'fas fa-robot'
       }
     });
+*/
 }
 
 function run($rootScope, $transitions) {

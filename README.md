@@ -22,8 +22,22 @@ npm install
 This web server will watch files and rebuild as they change.
 You will have to manually refresh the page as you make changes, but
 trust me that's better than having a refresh every time you save your work.
+This webserver will by default run on `http://localhost:8080`.
 ```
 npm start
+```
+
+#### API while in development
+All web requests to `/api` will be proxied to `http://localhost:6543/api`.
+This means you either need to launch the Godin server on this port during
+development or run the mock REST api.
+
+### Mock REST API
+You may edit `mockapi-db.json` to add more routes and values to the mock API.
+
+To run the mock api:
+```
+npm run api
 ```
 
 ### Testing

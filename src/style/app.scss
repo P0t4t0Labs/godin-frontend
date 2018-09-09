@@ -1,8 +1,13 @@
+// Import ngAnimate.css for simple animations
+@import "ngAnimate.css";
+
+// Import Bulma
 // Get all variables from our variables file
 @import "variables";
 // 6. Import the rest of Bulma
 @import "~bulma/bulma";
 @import "darkly-overrides";
+// End Bulma
 
 // Fontawesome
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";

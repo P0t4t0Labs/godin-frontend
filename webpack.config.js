@@ -10,6 +10,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require('path');
+var WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 
 /**
  * Env
@@ -216,6 +217,22 @@ module.exports = function makeWebpackConfig() {
         }
       }
     }),
+    new WebpackBuildNotifierPlugin({
+      title: 'Godin Build',
+      onClick: () => {},
+      successSound: 'Tink',
+      warningSound: 'Glass',
+      failureSound: 'Funk',
+      notifyOptions: {
+        wait: false,
+        timeout: 3,
+      }
+    }),
+    new webpack.ProvidePlugin({
+      'window.jQuery': 'jquery',
+      jQuery: 'jquery',
+      $: 'jquery'
+    }),
   ];
 
   config.externals = [
@@ -268,6 +285,8 @@ module.exports = function makeWebpackConfig() {
     contentBase: './src/public',
     stats: 'minimal',
     host: 'localhost',
+    inline: false,
+    historyApiFallback: false,  // Turn this back on if we switch to HTML5 mode
     proxy: {
       '/api': 'http://localhost:6543'
     }

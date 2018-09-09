@@ -24,5 +24,46 @@
       "addresses": [],
       "tasks": []
     }
+  ],
+  "rules": [
+    {
+      "name": "Take group photo when device detects movement",
+      "enabled": true,
+      "schedule": {
+        "format": "always-active"
+      },
+      "triggers": [
+        {
+          "source": "UTCTime",
+          "event": "time",
+          "decay": "60s",
+          "condition": {
+            "method": "equals",
+            "value": "2018-01-01T16:22:00Z"
+          }
+        },
+        {
+          "source": "device-004",
+          "event": "gyroscope",
+          "decay": "10s",
+          "condition": {
+            "method": "delta",
+            "axis": "any",
+            "range": "10s",
+            "value": "20"
+          }
+        }
+      ],
+      "actions": [
+        {
+          "target": "group-22",
+          "action": "photo",
+          "params": {
+            "count": "20",
+            "interval": "10s"
+          }
+        }
+      ]
+    }
   ]
 }

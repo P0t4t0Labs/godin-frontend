@@ -4,6 +4,8 @@ import './msgBar.scss'
 
 const MODULE_NAME = 'msgBar';
 
+// We use animation classes from http://theoinglis.github.io/ngAnimate.css
+
 function MsgBarService($q, $timeout) {
   var self = this;
   this._i = {
@@ -23,8 +25,9 @@ function MsgBarService($q, $timeout) {
     self.add('danger', message, timeout);
   };
 
-  // DEBUG ONLY TODO: one day remove!
-  this.success('Welcome!', 1200);
+  // DEBUG ONLY
+  //this.success('Welcome!', 2000);
+  //$timeout(() => this.danger('WHAT WHAT'), 1000);
 }
 MsgBarService.TIMEOUT = 5000;
 
@@ -79,7 +82,7 @@ MsgBarService.prototype.add = function(level, message, timeout) {
     }, timeout);
   }
 
-  svc.messages.push(msg);
+  svc.messages.unshift(msg);
 };
 
 angular.module(MODULE_NAME, [])

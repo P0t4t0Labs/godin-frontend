@@ -97,7 +97,7 @@ but the concept remains the same.
     schedule: {
         format: 'start/end',
         start: '2018-09-09T04:52:46Z',
-        end: '2018-12-03T12:11:00Z'
+        end: '2018-12-03T12:11:00Z',
     },
     schedule: {  // Here to show other format
         format: 'always-active'

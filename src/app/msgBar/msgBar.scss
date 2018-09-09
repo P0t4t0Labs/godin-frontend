@@ -1,5 +1,31 @@
+$navbar-height: 3.25rem !default
+$navbar-fixed-z: 30 !default
+
 ul.msg-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  //top: $navbar-height;
+  bottom: 0;
+  z-index: $navbar-fixed-z - 1;
+
   li {
+    padding: 0.5rem;
+
+    .container {
+      padding: 0 2rem 0 1rem;
+    }
+
+    .delete {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    &.ng-enter-active, &.ng-leave-active {
+      z-index: -1;
+    }
+
     // Colors
     @each $name, $pair in $colors {
       $color: nth($pair, 1);
@@ -9,17 +35,6 @@ ul.msg-bar {
         background-color: $color;
         color: $color-invert;
       }
-    }
-
-    padding: 0.5rem;
-    .container {
-      padding: 0 2rem 0 1rem;
-    }
-
-    .delete {
-      position: absolute;
-      top: 0;
-      right: 0;
     }
   }
 }

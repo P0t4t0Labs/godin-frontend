@@ -6,19 +6,19 @@
   "scripts": {
     "test": "karma start",
     "build": "rimraf dist && webpack --bail --progress --profile",
-    "server": "webpack-dev-server --history-api-fallback --inline --progress",
+    "server": "webpack-dev-server --progress",
     "test-watch": "karma start --auto-watch --no-single-run",
     "start": "npm run server",
     "api": "json-server -p 6543 -w -r mockapi-routes.json mockapi-db.json"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "angular": "^1.7.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.2.0",
     "@uirouter/angularjs": "^1.0.20",
+    "angular": "^1.7.4",
+    "angular-animate": "^1.7.4",
     "angular-messages": "^1.7.0",
     "angular-mocks": "^1.5.0",
     "autoprefixer": "^6.0.3",
@@ -33,6 +33,7 @@
     "html-webpack-plugin": "^2.7.1",
     "istanbul-instrumenter-loader": "^1.0.0",
     "jasmine-core": "^2.3.4",
+    "jquery": "^3.3.1",
     "json-server": "^0.14.0",
     "karma": "^3.0.0",
     "karma-coverage": "^1.0.0",
@@ -49,6 +50,7 @@
     "sass-loader": "^6.0.5",
     "style-loader": "^0.13.0",
     "webpack": "2.2.0",
+    "webpack-build-notifier": "^0.1.29",
     "webpack-dev-server": "2.2.0"
   },
   "_droppedDeps": {

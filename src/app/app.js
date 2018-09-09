@@ -1,5 +1,6 @@
 import angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
+import angularAnimate from 'angular-animate';
 import ngMessages from 'angular-messages'
 
 import '../style/app.scss';
@@ -13,11 +14,13 @@ import muninn from './muninn/module'
 
 const MODULE_NAME = 'godin';
 
-function config($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/muninn');
+// Hacky way of exposing jQuery to the window
+window.$ = $;
 
-/*
-Commenting this out because we're only focused on Muninn
+function config($stateProvider, $urlRouterProvider) {
+  $urlRouterProvider.otherwise('/');
+
+
   $stateProvider
     .state({
       name: 'home',
@@ -28,7 +31,9 @@ Commenting this out because we're only focused on Muninn
         weight: -100,
         icon: 'fas fa-home'
       }
-    })
+    });
+/*
+ Commenting this out because we're only focused on Muninn
     .state({
       name: 'clientList',
       url: '/clients',
@@ -56,6 +61,7 @@ function run($rootScope, $transitions) {
 }
 
 angular.module(MODULE_NAME, [
+    angularAnimate,
     api,
     clientsMod,
     mainNav,

@@ -1,0 +1,39 @@
+<div class="container p-t-md">
+
+  <script type="text/ng-template" id="clientPageTableHeader">
+    <tr>
+      <th>CUID</th>
+      <th>Key</th>
+      <th>First seen</th>
+      <th>Last seen</th>
+      <th>Shell</th>
+    </tr>
+  </script>
+
+
+  <div class="button is-small"
+       ng-disabled="$ctrl.loading"
+       ng-class="$ctrl.loading && 'is-loading'"
+       ng-click="$ctrl.refreshClients()">
+    <span class="icon is-small">
+      <i class="fas fa-sync"></i>
+    </span>
+    <span>Refresh</span>
+  </div>
+
+  <table class="table is-striped is-hoverable is-fullwidth"
+         ng-class="$ctrl.loading && 'loading-indicator'">
+    <thead ng-include="'clientPageTableHeader'"></thead>
+    <tfoot ng-include="'clientPageTableHeader'"></tfoot>
+    <tbody ng-repeat="client in $ctrl.clients">
+      <tr>
+        <th>{{client.cuid}}</th>
+        <th>{{client.key}}</th>
+        <th>{{client.first_seen}}</th>
+        <th>{{client.last_seen}}</th>
+        <th>{{client.shell_hint}}</th>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

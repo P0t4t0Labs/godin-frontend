@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en" ng-app="godin">
+<head>
+  <!-- This file is only a mock and not used directly as we use Pyramid's jinja template system-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title ng-bind-template="Godin{{$root.pageTitle ? ': ' + $root.pageTitle : ''}}">
+    Godin
+  </title>
+</head>
+<body class="has-navbar-fixed-top">
+  <main-nav></main-nav>
+  <msg-bar></msg-bar>
+
+  <ui-view></ui-view>
+</body>
+</html>

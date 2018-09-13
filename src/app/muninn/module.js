@@ -1,12 +1,16 @@
 import angular from 'angular';
 
 import muninnPage from './page';
+import muninnRules from './rules/index';
 
 const MODULE_NAME = 'muninn';
 
 //https://fontawesome.com/icons/crow?style=solid
 
-angular.module(MODULE_NAME, [muninnPage])
+angular.module(MODULE_NAME, [
+    muninnPage,
+    muninnRules
+  ])
   .config(function($stateProvider) {
     $stateProvider
       .state({
@@ -21,12 +25,24 @@ angular.module(MODULE_NAME, [muninnPage])
           icon: 'fas fa-crow'
         }
       })
+
       .state({
         name: 'muninn.rules',
         url: '/rules',
         pageTitle: 'Muninn Rules',
-        template: 'Rules!'
+        component: 'muninnRulesList'
       })
+      .state({
+        name: 'muninn.rules.edit',
+        url: '/:id',
+        pageTitle: 'Muninn Rules: Edit',
+        views: {
+          'muninnRoot@muninn': {
+            component: 'muninnRulesEdit',
+          },
+        }
+      })
+
       .state({
         name: 'muninn.tmp1',
         url: '/tmp1',

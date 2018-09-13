@@ -8,6 +8,20 @@
   <title ng-bind-template="Godin{{$root.pageTitle ? ': ' + $root.pageTitle : ''}}">
     Godin
   </title>
+  <script>
+    // Patch Safari: https://github.com/angular/angular.js/pull/14221
+    var _DatetoJSON = Date.prototype.toJSON;
+    Date.prototype.toJSON = function() {
+      try {
+        return _DatetoJSON.call(this);
+      } catch(e) {
+        if (e instanceof RangeError) {
+          return null;
+        }
+        throw e;
+      }
+    };
+  </script>
 </head>
 <body class="has-navbar-fixed-top">
   <main-nav></main-nav>

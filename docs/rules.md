@@ -106,8 +106,8 @@ but the concept remains the same.
     triggers: [
         {
             // Idea here is we have a fake "device" that blasts an event every minute
-            source: 'UTCTime',
-            event: 'time',
+            source: 'global',
+            event: 'UTCTime',
             decay: '60s',
             condition: {
                 method: 'equals',

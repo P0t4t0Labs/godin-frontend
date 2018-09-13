@@ -34,8 +34,8 @@
       },
       "triggers": [
         {
-          "source": "UTCTime",
-          "event": "time",
+          "source": "global",
+          "event": "UTCTime",
           "decay": "60s",
           "condition": {
             "method": "equals",

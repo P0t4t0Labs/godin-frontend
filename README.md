@@ -13,6 +13,10 @@ npm run build
 ## Development
 Below is information for developers.
 
+We follow [Google's Javascript Style Guide](https://google.github.io/styleguide/jsguide.html).
+
+Keep columns at 80.
+
 ### First time setup
 ```
 npm install

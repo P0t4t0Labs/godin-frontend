@@ -3,13 +3,18 @@ import uiRouter from '@uirouter/angularjs';
 import angularAnimate from 'angular-animate';
 import ngMessages from 'angular-messages'
 
+import uiGrid from 'angular-ui-grid';
+import 'angular-ui-grid/ui-grid.css';
+
 import '../style/app.scss';
 
+// Global Services
 import mainNav from './navigation/mainNav'
 import clientsMod from './clients/module'
 import msgBar from './msgBar/msgBar'
 import api from './services/api'
 
+// Our Modules
 import muninn from './muninn/module'
 
 const MODULE_NAME = 'godin';
@@ -68,6 +73,7 @@ angular.module(MODULE_NAME, [
     msgBar,
     ngMessages,
     uiRouter,
+    uiGrid,
     muninn,
   ])
   .config(config)

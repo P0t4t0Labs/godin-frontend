@@ -15,6 +15,11 @@ function MuninnRulesList(api) {
   };
 
   this.loading = false;
+  this.gridData = null;
+
+  this.gridOptions = {
+    enableSorting: true,
+  };
 }
 
 MuninnRulesList.prototype.$onInit = function() {
@@ -25,8 +30,10 @@ MuninnRulesList.prototype.refresh = function() {
   if (this.loading) return;
 
   this.loading = true;
+  this.gridData = null;
+
   this._i.api.get('/rules')
-      .then(response => this.rules = response.data)
+      .then(response => this.rules = this.gridData = {data: response.data})
       .finally(() => this.loading = false);
 };
 

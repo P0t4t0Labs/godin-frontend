@@ -5,7 +5,8 @@ const MOD_NAME = rootName + '.list';
 
 angular.module(MOD_NAME, ['api'])
   .component('muninnRulesList', {
-    template: '<h1>Muninn Rules List: TO DO</h1>'
+    template: require('./list.html'),
+    controller: MuninnRulesList,
   });
 
 function MuninnRulesList(api) {

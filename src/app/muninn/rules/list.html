@@ -1,8 +1,8 @@
 <div>
-    hi
     <button ng-click="$ctrl.refresh()">Refresh</button>
     <div>{{$ctrl.loading}}</div>
-    <div ng-repeat="rule in $ctrl.rules">
+    <hr>
+    <div ng-repeat="rule in ::$ctrl.rules" ng-if="!$ctrl.loading">
         <pre>{{::rule|json}}</pre>
     </div>
 </div>

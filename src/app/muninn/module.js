@@ -30,18 +30,14 @@ angular.module(MODULE_NAME, [
         name: 'muninn.rules',
         url: '/rules',
         pageTitle: 'Muninn Rules',
-        views: {
-          'muninnRoot@muninn': {
-            component: 'muninnRulesList'
-          },
-        }
+        component: 'muninnRulesList'
       })
       .state({
         name: 'muninn.rules.edit',
         url: '/:id',
         pageTitle: 'Muninn Rules: Edit',
         views: {
-          'muninnRoot@muninn': {
+          '@muninn': {
             component: 'muninnRulesEdit',
           },
         }

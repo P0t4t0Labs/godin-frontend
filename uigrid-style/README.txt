@@ -1,3 +1,5 @@
+Run build.sh
+
 The purpose of this directory is to manually rebuild uiGrid styles.
 
 This should not need to be done very often so it's "fine" to not have this

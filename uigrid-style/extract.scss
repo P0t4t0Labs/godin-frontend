@@ -1,4 +1,27 @@
 @import "../src/style/_variables.scss";
+// Ripped this from bulma's table.sass
+// I wish there was a better way to do this.
+$table-color: $grey-darker !default
+$table-background-color: $white !default
+
+$table-cell-border: 1px solid $grey-lighter !default
+$table-cell-border-width: 0 0 1px !default
+$table-cell-padding: 0.5em 0.75em !default
+$table-cell-heading-color: $text-strong !default
+
+$table-head-cell-border-width: 0 0 2px !default
+$table-head-cell-color: $text-strong !default
+$table-foot-cell-border-width: 2px 0 0 !default
+$table-foot-cell-color: $text-strong !default
+
+$table-row-hover-background-color: $white-bis !default
+
+$table-row-active-background-color: $primary !default
+$table-row-active-color: $primary-invert !default
+
+$table-striped-row-even-background-color: $white-bis !default
+$table-striped-row-even-hover-background-color: $white-ter !default
+// END RIP
 
 // This is a super hacky file to extract sass variables into less.
 // I've tried every single sass or sass2less converter or what have you,
@@ -10,11 +33,82 @@
 // Only ever assign a single property to the class.
 // We're using ghetto regex to parse this.
 
+$border-color: $grey;
+// @section Grid styles
 .borderColor {
   // Comes from $table-cell-border
-  color: $grey;
+  color: $border-color;
+}
+.focusColor {
+  color: lighten($table-row-active-background-color, 8%);
+}
+.activeColor {
+  color: $table-row-active-background-color;
 }
 
-.focusColor {
+// @section Header styles
+// @description Colors for header gradient
+.headerBackgroundColor {
+  color: $table-background-color;
+}
+.headerGradientStart {
+  color: $table-background-color;
+}
+.headerGradientStop {
+  color: $table-background-color;
+}
+
+// @section Grid body styles
+// @description Colors used for row alternation
+.rowColorHovered {
   color: $table-row-hover-background-color;
+}
+.rowColorEven {
+  color: $table-background-color;
+}
+.rowColorOdd {
+  color: $table-striped-row-even-background-color;
+}
+
+// @section Grid Menu colors
+.menuBackgroundColor {
+  color: lighten($table-background-color, 8%);
+}
+.menuHoverColor {
+  color: lighten($table-row-hover-background-color, 8%);
+}
+.menuSelectedColor {
+  color: $table-row-hover-background-color;
+}
+.menuTextColor {
+  color: $table-head-cell-color;
+}
+
+// @section Sort arrow colors
+.sortArrowBackgroundColor {
+  color: $table-color;
+}
+.sortArrowBorderColor {
+  color: $border-color;
+}
+
+
+//.rowHeaderCell {
+//  color: ;
+//}
+//.rowSelected {
+//  color: ;
+//}
+//.rowSavingForeground {
+//  color: ;
+//}
+//.rowErrorForeground {
+//  color: ;
+//}
+//.rowDirtyForeground {
+//  color: ;
+//}
+
+.invalidValueBorder {
+  border: 1px solid $red;
 }

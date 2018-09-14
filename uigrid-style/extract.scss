@@ -1,0 +1,20 @@
+@import "../src/style/_variables.scss";
+
+// This is a super hacky file to extract sass variables into less.
+// I've tried every single sass or sass2less converter or what have you,
+// but nothing other than node-sass can read Bulma's sass files because
+// they use a very new syntax.
+
+// Set a class equal to the name of the less variable you'd like to set.
+// Use an appropriate css property and assign a variable to it.
+// Only ever assign a single property to the class.
+// We're using ghetto regex to parse this.
+
+.borderColor {
+  // Comes from $table-cell-border
+  color: $grey;
+}
+
+.focusColor {
+  color: $table-row-hover-background-color;
+}

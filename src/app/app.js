@@ -4,7 +4,7 @@ import angularAnimate from 'angular-animate';
 import ngMessages from 'angular-messages'
 
 import uiGrid from 'angular-ui-grid';
-import 'angular-ui-grid/ui-grid.css';
+import '../style/uigrid-custom.css';
 
 import '../style/app.scss';
 
